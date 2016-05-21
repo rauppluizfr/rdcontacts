@@ -6,12 +6,13 @@
 - ruby version: 2.0.0
 - install postgrees
 
-- git pull :)
+- git pull
 - bundle install
 - change db credentials (pg) -> config/database.yml
 - rake db:create
 - rake db:migrate
 - rake db:seed
+- rails server - to start the app (or another one that you use)
 
 After a db seed you can use the super user to create new clients for the application. Only a client can sing-in and add users to his contact list.
 

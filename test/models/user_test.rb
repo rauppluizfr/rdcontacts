@@ -17,4 +17,23 @@ class UserTest < ActiveSupport::TestCase
     u.email = "teste@teste.com.br"
     assert u.valid?
   end
+
+  test "abilities" do
+    admin = Admin.create!(email: "ab1@ab.com.br", password: "12345678")
+    client = Client.create!(email: "ab2@ab.com.br", password: "12345678")
+    client2 = Client.create!(email: "ab3@ab.com.br", password: "12345678")
+
+#admin can do everything
+    ability = Ability.new(admin)
+    assert ability.can?(:manage,client)
+#client cannot manage a admin profile
+    ability = Ability.new(client)
+    assert ability.cannot?(:manage,admin)
+#client can manage his profile
+    ability = Ability.new(client)
+    assert ability.can?(:manage,client)
+#client cannot manage another profile
+    ability = Ability.new(client)
+    assert ability.cannot?(:manage,client2)
+  end
 end
