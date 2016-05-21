@@ -10,7 +10,9 @@ class Ability
         can :edit, Client do |client|
             user.id == client.id
         end
-        can :manage, CustomFormField
+        can :manage, CustomFormField do |field|
+            user.id == field.user_id
+        end
       end
   end
 end

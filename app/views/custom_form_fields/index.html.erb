@@ -23,6 +23,7 @@
                       <tr>
                           <th>Name</th>
                           <th>Extra Data</th>
+                          <th>Type</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -34,6 +35,7 @@
                               <%= data.name %>
                             <% end %>
                           </td>
+                          <td><%= get_form_type_string(field.type) %></td>
                       </tr>
                   <% end %>
                   </tbody>
