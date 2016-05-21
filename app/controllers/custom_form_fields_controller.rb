@@ -27,7 +27,9 @@ class CustomFormFieldsController < ApplicationController
     end
 
     def fields_params
-      params.require(custom_form_field.underscore.to_sym).permit(:name,:type)
+      params.require(custom_form_field.underscore.to_sym).permit(:name,
+      :type,
+      :extra_data_attributes => [:name])
     end
 
 end

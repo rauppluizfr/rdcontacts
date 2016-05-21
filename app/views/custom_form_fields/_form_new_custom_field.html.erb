@@ -2,7 +2,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Create new client</h4>
+            <h4 class="modal-title" id="myModalLabel">Create new custom field</h4>
         </div>
         <div id="error_explanation">
         </div>
@@ -13,7 +13,17 @@
         </div>
         <div class="modal-body">
             <%= f.label :type %>
-            <%= f.select :type, options_for_select(CustomFormField.forms_type.map { |value| [ get_form_type_string(value), value ]  }), {}, { :class => 'select_field_type' } %>
+            <%= f.select :type, options_for_select(CustomFormField.forms_type.map { |value| [ get_form_type_string(value), value ]  }), {}, { :class => 'form-control select_field_type' } %>
+        </div>
+        <div id="custom_data" style="display: none">
+          <div class="modal-body">
+            <%= f.label "Options" %>
+            <%= text_field_tag 'new_data', nil, class: 'form-control extra_data_field' %>
+            <%= link_to "Add","#", class: "btn btn-primary add_new_extra_data" %>
+          </div>
+          <div id="custom_data_fields">
+
+          </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

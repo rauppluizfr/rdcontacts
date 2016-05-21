@@ -22,12 +22,18 @@
                   <thead>
                       <tr>
                           <th>Name</th>
+                          <th>Extra Data</th>
                       </tr>
                   </thead>
                   <tbody>
                   <% @fields.each do |field| %>
                       <tr class="odd gradeX">
                           <td><%= field.name %></td>
+                          <td>
+                            <% field.extra_data.each do |data| %>
+                              <%= data.name %>
+                            <% end %>
+                          </td>
                       </tr>
                   <% end %>
                   </tbody>
