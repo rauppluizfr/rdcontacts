@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   before_validation :check_password
 
   has_many :custom_form_fields
+  has_many :contacts
 
   def self.user_type
     %w(Admin Client)
