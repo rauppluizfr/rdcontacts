@@ -46,8 +46,8 @@ class UserTest < ActiveSupport::TestCase
   test "custom_fields_rel" do
     user = Client.create!(email: "ab1@ab.com.br")
 
-    field1 = CustomFormTextField.create!(name: "Field1")
-    field2 = CustomFormTextField.create!(name: "Field1")
+    field1 = CustomFormTextField.create!(name: "Field1",user: user)
+    field2 = CustomFormTextField.create!(name: "Field1",user: user)
 
     user.custom_form_fields << field1
     user.custom_form_fields << field2

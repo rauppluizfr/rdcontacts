@@ -3,8 +3,9 @@ require 'test_helper'
 class CustomFormFieldTest < ActiveSupport::TestCase
 
   test "extra_data_rel" do
-    dt1 = ExtraDatum.create!(name: "dt1")
-    dt2 = ExtraDatum.create!(name: "dt2")
+    user = Client.create!(email: "ab1@ab.com.br")
+    dt1 = ExtraDatum.create!(name: "dt1",user: user)
+    dt2 = ExtraDatum.create!(name: "dt2", user: user)
 
     field1 = CustomFormTextField.create!(name: "Field1")
 
