@@ -3,6 +3,7 @@ class CustomFormField < ActiveRecord::Base
   has_many :extra_data
   accepts_nested_attributes_for :extra_data
   validates :user, presence: true
+  validates :name, presence: true
 
   after_create :check_old_entries
 

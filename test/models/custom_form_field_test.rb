@@ -7,7 +7,7 @@ class CustomFormFieldTest < ActiveSupport::TestCase
     dt1 = ExtraDatum.create!(name: "dt1")
     dt2 = ExtraDatum.create!(name: "dt2")
 
-    field1 = CustomFormTextField.create!(name: "Field1",user: user)
+    field1 = CustomFormTextField.create!(name: "Field1",user: user, name: "m1")
 
     field1.extra_data << dt1
     field1.extra_data << dt2
@@ -22,7 +22,7 @@ class CustomFormFieldTest < ActiveSupport::TestCase
     c = Contact.create!(user: user, contact: user2)
 
     count_before = user.contacts.first.contacts_custom_form_fields.count
-    field1 = CustomFormTextField.create!(name: "Field1",user: user)
+    field1 = CustomFormTextField.create!(name: "Field1",user: user, name: "m1")
     count_after = user.contacts.first.contacts_custom_form_fields.count
 
     assert_equal count_before, count_after - 1

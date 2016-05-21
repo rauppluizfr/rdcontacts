@@ -33,10 +33,10 @@ class UserTest < ActiveSupport::TestCase
     assert ability.can?(:edit,client)
 #client can create custom fields
     assert ability.can?(:create,CustomFormField)
-    field1 = CustomFormField.create!(user: client)
+    field1 = CustomFormField.create!(user: client, name: "m1")
     assert ability.can?(:create,field1)
 #client cannot create a custom field for another client
-    field2 = CustomFormField.create!(user: client2)
+    field2 = CustomFormField.create!(user: client2, name: "m1")
     assert ability.cannot?(:create,field2)
 #client cannot manage another client profile
     ability = Ability.new(client)
@@ -46,8 +46,8 @@ class UserTest < ActiveSupport::TestCase
   test "custom_fields_rel" do
     user = Client.create!(email: "ab1@ab.com.br")
 
-    field1 = CustomFormTextField.create!(name: "Field1",user: user)
-    field2 = CustomFormTextField.create!(name: "Field1",user: user)
+    field1 = CustomFormTextField.create!(name: "Field1",user: user, name: "m1")
+    field2 = CustomFormTextField.create!(name: "Field1",user: user, name: "m1")
 
     user.custom_form_fields << field1
     user.custom_form_fields << field2

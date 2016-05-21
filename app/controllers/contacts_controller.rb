@@ -27,11 +27,20 @@ class ContactsController < ApplicationController
     end
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @contact = Contact.find(params[:id])
+    @contact.update_attributes(contacts_params)
+  end
+
 private
 
   def contacts_params
     params.require("contact").permit(:name,
-    :contacts_custom_form_fields_attributes  => [:custom_form_field_id,:value])
+    :contacts_custom_form_fields_attributes  => [:id,:custom_form_field_id,:value])
   end
 
 end

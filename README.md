@@ -12,11 +12,13 @@
 - rake db:create
 - rake db:migrate
 - rake db:seed
+- rake test - run all tests
 - rails server - to start the app (or another one that you use)
 
-After a db seed you can use the super user to create new clients for the application. Only a client can sing-in and add users to his contact list.
+
+After a db seed you can use the super user to create new clients for the application.
 
 - super user email:  admin@rdcontacts.com
 - super user password: 12345678
 
-You can change these credentials at file db/seeds.rb. This first release does not allow an user to change their password or recovery it.
+You can change these credentials at file db/seeds.rb. This first release does not allow an user to change their password or recovery it. All new clients will have as new password: 12345678
