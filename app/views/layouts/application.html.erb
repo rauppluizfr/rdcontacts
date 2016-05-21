@@ -53,6 +53,11 @@
                             <%= link_to('<i class="fa fa-clipboard fa-fw"></i> My Custom Fields'.html_safe,custom_form_fields_path) %>
                         </li>
                       <% end %>
+                      <% if can? :manage, CustomFormField %>
+                        <li>
+                            <%= link_to('<i class="fa fa-clipboard fa-fw"></i> My Contacts'.html_safe,contacts_path) %>
+                        </li>
+                      <% end %>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

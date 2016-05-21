@@ -10,8 +10,13 @@ class Ability
         can :edit, Client do |client|
             user.id == client.id
         end
+        can :new, CustomFormField
         can :manage, CustomFormField do |field|
             user.id == field.user_id
+        end
+        can :new, Contact
+        can :manage, Contact do |c|
+            user.id == c.user_id
         end
       end
   end
