@@ -48,6 +48,11 @@
                             <%= link_to('<i class="fa fa-user fa-fw"></i> Clients'.html_safe,clients_path) %>
                         </li>
                       <% end %>
+                      <% if can? :manage, Client %>
+                        <li>
+                            <%= link_to('<i class="fa fa-clipboard fa-fw"></i> Custom Fields'.html_safe,clients_path) %>
+                        </li>
+                      <% end %>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

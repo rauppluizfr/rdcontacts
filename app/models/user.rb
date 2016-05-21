@@ -6,11 +6,17 @@ class User < ActiveRecord::Base
 
   before_validation :check_password
 
+  has_many :custom_form_fields
+
   def self.user_type
     %w(Admin Client)
   end
 
   def is_admin?
+    false
+  end
+
+  def is_client?
     false
   end
 

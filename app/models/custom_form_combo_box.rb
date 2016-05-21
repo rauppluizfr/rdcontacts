@@ -1,0 +1,3 @@
+class CustomFormComboBox < CustomFormField
+
+end

@@ -1,0 +1,3 @@
+class CustomFormTextField < CustomFormField
+
+end
