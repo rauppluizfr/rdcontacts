@@ -1,11 +1,6 @@
-class User < ActiveRecord::Base
+class Admin < User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-private
-  def password_required?
-    self.type == 'Client' || self.type == 'Admin'
-  end
 end
