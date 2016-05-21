@@ -12,7 +12,7 @@ class UserTest < ActiveSupport::TestCase
     assert !c.valid?
   end
 
-  test "comman_user_does_not_need_password" do
+  test "common_user_does_not_need_password" do
     u = User.new
     u.email = "teste@teste.com.br"
     assert u.valid?
