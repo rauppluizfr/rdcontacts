@@ -4,4 +4,5 @@ class Contact < ActiveRecord::Base
 
   has_many :contacts_custom_form_fields
   has_many :custom_form_fields, through: :contacts_custom_form_fields
+  accepts_nested_attributes_for :contacts_custom_form_fields
 end

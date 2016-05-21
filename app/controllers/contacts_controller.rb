@@ -8,6 +8,8 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @contact.user = current_user
+    @contact.custom_form_fields << current_user.custom_form_fields
   end
 
   def create
@@ -28,7 +30,8 @@ class ContactsController < ApplicationController
 private
 
   def contacts_params
-    params.require("contact").permit(:name)
+    params.require("contact").permit(:name,
+    :contacts_custom_form_fields_attributes  => [:custom_form_field_id,:value])
   end
 
 end
