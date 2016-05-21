@@ -28,9 +28,9 @@ class UserTest < ActiveSupport::TestCase
 #client cannot manage a admin profile
     ability = Ability.new(client)
     assert ability.cannot?(:manage,admin)
-#client can manage his profile
+#client can edit his profile
     ability = Ability.new(client)
-    assert ability.can?(:manage,client)
+    assert ability.can?(:edit,client)
 #client can create custom fields
     assert ability.can?(:create,CustomFormField)
     field1 = CustomFormField.create!(user: client)
