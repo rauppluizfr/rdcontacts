@@ -4,9 +4,21 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-def is_admin?
-  false
-end
+  before_validation :check_password
+
+  def self.user_type
+    %w(Admin Client)
+  end
+
+  def is_admin?
+    false
+  end
+
+  def check_password
+    #we should send an e-mail to the user to inform the new password
+    self.password = 12345678 if new_record? and password_required? and password.nil?
+    true
+  end
 
 private
   def password_required?

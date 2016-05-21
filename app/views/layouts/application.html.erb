@@ -43,9 +43,11 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                      <% if can? :manage, Client %>
                         <li>
-                            <%= link_to('<i class="fa fa-user fa-fw"></i> Clients'.html_safe,"#") %>
+                            <%= link_to('<i class="fa fa-user fa-fw"></i> Clients'.html_safe,clients_path) %>
                         </li>
+                      <% end %>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
