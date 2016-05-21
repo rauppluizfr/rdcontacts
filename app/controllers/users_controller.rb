@@ -13,6 +13,11 @@ class UsersController < ApplicationController
     @user = user_class.create!(users_params)
   end
 
+  def update
+    @user = user_class.find(params[:id])
+    @user.update_attributes(users_params)
+  end
+
 private
 
   def user
@@ -24,7 +29,7 @@ private
   end
 
   def users_params
-    params.require(user.underscore.to_sym).permit(:name,:email,:type)
+    params.require(user.underscore.to_sym).permit(:name,:email,:type,:password,:password_confirmation)
   end
 
 end

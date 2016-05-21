@@ -7,7 +7,10 @@ class Ability
       if user.is_admin?
         can :manage, :all
       else
-        can :edit, Client do |client|
+        can :manage, User do |user|
+            user.id == user.id
+        end
+        can :manage, Client do |client|
             user.id == client.id
         end
         can :new, CustomFormField

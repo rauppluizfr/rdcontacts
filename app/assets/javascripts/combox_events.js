@@ -17,3 +17,8 @@ $(document).on("click", ".add_new_extra_data", function() {
   $('<div class="modal-body"><input class="form-control custom_field_extra_data" name="custom_form_field[extra_data_attributes][][name]" value="'+value+'"></div>').appendTo("#custom_data_fields");
 
 });
+
+$(document).on("click", ".account", function() {
+  m = $("#password_modal");
+  m.modal('show');
+});
