@@ -21,4 +21,4 @@ After a db seed you can use the super user to create new clients for the applica
 - super user email:  admin@rdcontacts.com
 - super user password: 12345678
 
-You can change these credentials at file db/seeds.rb. This first release does not allow an user to change their password or recovery it. All new clients will have as new password: 12345678
+You can change these credentials at file db/seeds.rb. All new clients will have as new password: 12345678
