@@ -1,5 +1,5 @@
 class CustomFormFieldsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :custom_form_field, :except => [:create]
 
   def index
     @fields = current_user.custom_form_fields
@@ -12,6 +12,7 @@ class CustomFormFieldsController < ApplicationController
   def create
     @field = custom_form_field_class.new(fields_params)
     @field.user = current_user
+    authorize! :create, @field
     @field.save
   end
 
