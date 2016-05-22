@@ -18,7 +18,7 @@
         <div class="modal-body">
             <%= f.label :email %>
             <% if action_name == "show" %>
-              <%= f.fields_for :user, @contact.user do |u_fields| %>
+              <%= f.fields_for :user, @contact.contact do |u_fields| %>
                 <%= u_fields.text_field :email, class: 'form-control', disabled: true %>
               <% end %>
             <% else %>
