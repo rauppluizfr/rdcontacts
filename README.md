@@ -6,6 +6,7 @@
 - ruby version: 2.0.0
 - postgress
 
+
 - git pull
 - bundle install
 - change db credentials (pg) -> config/database.yml

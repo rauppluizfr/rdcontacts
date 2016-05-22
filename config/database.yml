@@ -15,11 +15,6 @@ test:
   <<: *login
 
 production:
-  database: bbo_db
   adapter: postgresql
-  encoding: unicode
   pool: 5
   timeout: 5000
-  username: plyom
-  password: plyom2013
-  host: localhost

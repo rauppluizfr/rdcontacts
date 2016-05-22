@@ -13,7 +13,6 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.logger = Logger.new(STDOUT) config.logger.level = Logger::DEBUG
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
@@ -54,6 +53,8 @@ Rails.application.configure do
 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::DEBUG
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store

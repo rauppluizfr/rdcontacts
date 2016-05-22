@@ -90,18 +90,18 @@
               <div id="error_explanation">
               </div>
               <%=  form_for(current_user, remote: true) do |f|  %>
-              <div class="modal-body">
-                  <%= f.label :password %>
-                  <%= f.password_field :password, class: 'form-control' %>
-              </div>
-              <div class="modal-body">
-                  <%= f.label :password_confirmation %>
-                  <%= f.password_field :password_confirmation, class: 'form-control' %>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                  <%= f.submit 'Salvar', class: 'btn btn-primary' %>
-              </div>
+                <div class="modal-body">
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: 'form-control' %>
+                </div>
+                <div class="modal-body">
+                    <%= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation, class: 'form-control' %>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+                </div>
               <% end %>
           </div>
           <!-- /.modal-content -->
