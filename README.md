@@ -4,7 +4,7 @@
 
 - rails version: 4.2.3
 - ruby version: 2.0.0
-- install postgrees
+- postgress
 
 - git pull
 - bundle install
@@ -21,4 +21,4 @@ After a db seed you can use the super user to create new clients for the applica
 - super user email:  admin@rdcontacts.com
 - super user password: 12345678
 
-You can change these credentials at file db/seeds.rb. All new clients will have as new password: 12345678
+You can change these credentials at file db/seeds.rb. All new clients will have the new password: 12345678
